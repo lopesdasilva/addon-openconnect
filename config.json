@@ -1,6 +1,6 @@
 {
   "name": "Open connect Global protect",
-  "version": "0.3",
+  "version": "0.4",
   "slug": "openconnect",
   "description": "open connect",
   "url": "https://github.com/lopesdasilva/addon-openconnect",
@@ -10,11 +10,8 @@
     "aarch64"
   ],
   "init": false,
-  "map": [
-    "backup:rw",
-    "ssl"
-  ],
   "boot": "auto",
+  "host_network": true,
   "ports": {
     "8889/udp": null,
     "8889/tcp": null,
