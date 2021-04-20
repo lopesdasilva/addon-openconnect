@@ -1,6 +1,6 @@
 {
   "name": "Open connect Global protect",
-  "version": "0.2",
+  "version": "0.3",
   "slug": "openconnect",
   "description": "open connect",
   "url": "https://github.com/lopesdasilva/addon-openconnect",
@@ -33,9 +33,6 @@
   "hassio_api": true,
   "hassio_role": "default",
   "options": {
-    "ssl": true,
-    "certfile": "fullchain.pem",
-    "keyfile": "privkey.pem",
     "OPENCONNECT_URL": "Gateway URL",
     "OPENCONNECT_USER": "Username",
     "OPENCONNECT_PASSWORD": "Password",
@@ -43,9 +40,10 @@
   },
   "schema": {
     "log_level": "list(trace|debug|info|notice|warning|error|fatal)?",
-    "ssl": "bool",
-    "certfile": "str",
-    "keyfile": "str",
+    "OPENCONNECT_URL": "str",
+    "OPENCONNECT_USER": "str",
+    "OPENCONNECT_PASSWORD": "str",
+    "OPENCONNECT_PASSWORD": "str",
     "memory_max": "int?",
     "memory_init": "int?"
   }
