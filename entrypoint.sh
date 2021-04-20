@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/with-contenv bashio
 
 sed "s/^Port .*$/Port 8888/" -i /etc/tinyproxy.conf
 /usr/bin/tinyproxy -c /etc/tinyproxy.conf

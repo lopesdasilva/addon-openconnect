@@ -39,4 +39,4 @@ RUN chmod +x /entrypoint.sh
 EXPOSE 8888
 EXPOSE 8889
 
-ENTRYPOINT ["/entrypoint.sh"]
+CMD ["/entrypoint.sh"]
