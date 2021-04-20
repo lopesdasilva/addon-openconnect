@@ -1,14 +1,52 @@
 {
-  "name": "Hello world",
-  "version": "0.2",
-  "slug": "hello_world",
-  "description": "My first real add-on!",
-  "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
-  "startup": "before",
+  "name": "Open connect Global protect",
+  "version": "0.1",
+  "slug": "openconnect",
+  "description": "open connect",
+  "url": "https://github.com/lopesdasilva/addon-openconnect",
+  "webui": "https://[HOST]:[PORT:8443]",
+  "startup": "services",
+  "arch": [
+    "aarch64"
+  ],
+  "init": false,
+  "map": [
+    "backup:rw",
+    "ssl"
+  ],
   "boot": "auto",
-  "options": {},
-  "schema": {},
   "ports": {
-    "8000/tcp": 8000
+    "8889/udp": null,
+    "8889/tcp": null,
+    "8888/udp": null,
+    "8888/tcp": null
+  },
+  "ports_description": {
+    "8888/udp": "Proxy udp",
+    "8888/tcp": "Proxy tcp",
+    "8889/udp": "proxy 2 udp",
+    "8889/tcp": "proxy 2 tcp"
+  },
+  "privileged": [
+    "NET_ADMIN"
+  ],
+  "hassio_api": true,
+  "hassio_role": "default",
+  "options": {
+    "ssl": true,
+    "certfile": "fullchain.pem",
+    "keyfile": "privkey.pem",
+    "OPENCONNECT_URL": "Gateway URL",
+    "OPENCONNECT_USER": "Username",
+    "OPENCONNECT_PASSWORD": "Password",
+    "OPENCONNECT_OPTIONS": "--protocol=gp --reconnect-timeout 86400"
+  },
+  "schema": {
+    "log_level": "list(trace|debug|info|notice|warning|error|fatal)?",
+    "ssl": "bool",
+    "certfile": "str",
+    "keyfile": "str",
+    "memory_max": "int?",
+    "memory_init": "int?"
   }
 }
